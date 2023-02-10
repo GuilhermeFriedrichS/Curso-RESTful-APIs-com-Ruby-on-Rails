@@ -5,12 +5,12 @@ class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
 
-    render json: @contacts, methods: [:hello, :i18n] #root: true Mostra a classe de onde vem o objeto no json
+    render json: @contacts #methods: [:hello, :i18n] #root: true Mostra a classe de onde vem o objeto no json, methods é a lista de metodos q ele vai chamar
   end
 
   # GET /contacts/1
   def show
-    render json: @contact, include: :kind
+    render json: @contact.to_br #, include: :kind
   end
 
   # POST /contacts

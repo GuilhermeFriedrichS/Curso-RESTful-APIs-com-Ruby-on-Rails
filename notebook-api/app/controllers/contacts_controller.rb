@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
 
-    render json: @contacts #root: true Mostra a classe de onde vem o objeto no json
+    render json: @contacts, methods: [:hello, :i18n] #root: true Mostra a classe de onde vem o objeto no json
   end
 
   # GET /contacts/1

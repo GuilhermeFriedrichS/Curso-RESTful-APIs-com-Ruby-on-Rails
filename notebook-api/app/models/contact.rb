@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
+    #associações
     belongs_to :kind#, optional: true deixa o usario cadastrar contato sem o tipo
+    has_many :phones
 
     #def birthdate_br
     #    I18n.l(self.birthdate) unless self.birthdate.blank?

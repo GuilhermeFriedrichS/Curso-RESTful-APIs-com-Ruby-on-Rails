@@ -1,4 +1,5 @@
-class AddressesController < ApplicationController
+module V2
+  class AddressesController < ApplicationController
     before_action :set_contact
 
     def destroy
@@ -37,4 +38,5 @@ class AddressesController < ApplicationController
         ActiveModelSerializers::Deserialization.jsonapi_parse(params)
       end
   end
+end
   

@@ -1,4 +1,7 @@
 class Contact < ApplicationRecord
+
+    paginates_per 5
+
     #associações
     belongs_to :kind#, optional: true deixa o usario cadastrar contato sem o tipo
     has_many :phones

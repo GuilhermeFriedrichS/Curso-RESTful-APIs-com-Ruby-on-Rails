@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
+  resources :auths, only: [:create]
   resources :kinds
   resources :contacts do 
     resource :kind, only: [:show] #Cria a rota que retona o kind do contato sem precisar passar o id do kind (belongs_to)

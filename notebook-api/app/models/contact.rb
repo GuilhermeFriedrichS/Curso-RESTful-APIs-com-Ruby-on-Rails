@@ -1,5 +1,8 @@
 class Contact < ApplicationRecord
 
+    validates_presence_of :kind #Campo obrigatório
+    validates_presence_of :address #Campo obrigatório
+
     paginates_per 5
 
     #associações

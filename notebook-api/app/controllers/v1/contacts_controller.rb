@@ -10,7 +10,10 @@ module V1
 
       @contacts = Contact.all.page(params[:page].try(:[], :number))
 
-      render json: @contacts
+      # Cache_Control expires_in 30.seconds, public: true Só faz busca quando existem dados novos
+      if stale?(last_modified: @contacts[0].updated_at)
+        render json: @contacts
+      end
       #paginate json: @contacts #methods: [:hello, :i18n] #root: true Mostra a classe de onde vem o objeto no json, methods é a lista de metodos q ele vai chamar
     end
 

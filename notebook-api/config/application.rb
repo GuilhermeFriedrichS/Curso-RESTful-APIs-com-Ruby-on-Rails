@@ -31,5 +31,8 @@ module NotebookApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    
+    #da um autoload no /lib pra poder execultar o midware
+    config.autoload_paths << Rails.root.join('lib') 
   end
 end
